@@ -2,7 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ConteudoTest {
+public class ConteudoTeste {
     private Conteudo filmeHomemDeFerro;
     private Conteudo serieThe100;
 

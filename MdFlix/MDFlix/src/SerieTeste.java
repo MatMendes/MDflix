@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SerieTest {
+public class SerieTeste {
     private Serie the100;
 
     @Before
