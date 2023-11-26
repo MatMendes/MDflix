@@ -4,6 +4,8 @@
  */
 package com.mycompany.mdflix;
 
+import com.mycompany.mdflix.Episodios.The100Temp;
+
 /**
  *
  * @author Matheus
@@ -65,6 +67,11 @@ public class The100 extends javax.swing.JFrame {
         jLabel8.setText(" Os sobreviventes vivem em uma estação espacial chamada Arca.");
 
         jButton2.setText("Assistir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Voltar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +162,12 @@ public class The100 extends javax.swing.JFrame {
         new TelaPrincipal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+            new The100Temp().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
