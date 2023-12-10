@@ -1,0 +1,4 @@
+Consegui fazer a conexao com muito custo, mas nao deu tempo de fazer completo com todas as classes devido
+eu estar trabalhando todo o fds, mas estou entregando essa parte e uma classe Main onde possui todo o que
+foi pedido, enviando apenas para verificar se o sentido e esse mesmo, caso for irei colocar nas classes 
+conforme eu fizer ate a entrega final.

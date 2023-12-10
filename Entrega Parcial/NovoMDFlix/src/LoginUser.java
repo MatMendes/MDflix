@@ -115,14 +115,7 @@ public class LoginUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
-            if(jTextField1.getText().equals("matheus") && jPasswordField1.getText().equals("123456")){
-            
-            setVisible(false);
-            new Usuarios1().setVisible(true);
-        }else{
-            JOptionPane.showMessageDialog(null, "usuario ou senha incorretos!");
-        }
+        
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
