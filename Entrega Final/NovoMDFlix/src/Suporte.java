@@ -2,7 +2,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
@@ -137,7 +136,7 @@ public class Suporte extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        String assunto = txtAssunto.getText();
-    String mensagem = txtSms.getText();
+       String mensagem = txtSms.getText();
 
     try {
         java.sql.Connection conec = ConexaoSQL.getCon();

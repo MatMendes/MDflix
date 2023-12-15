@@ -135,15 +135,29 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          String nomeUsuario = txtEntrar.getText();
-    String senha = new String(txtSenha.getPassword());
+  String nomeUsuario = txtEntrar.getText();
+    char[] senhaCharArray = txtSenha.getPassword();
+
+    // Verifica se a senha foi digitada
+    if (senhaCharArray.length == 0) {
+        JOptionPane.showMessageDialog(null, "Por favor, digite a senha.");
+        return;  // Sai do método se a senha não foi digitada
+    }
+
+    String senha = new String(senhaCharArray);
+
+    // Verifica se a senha contém pelo menos uma letra maiúscula
+    if (!contemLetraMaiuscula(senha)) {
+        JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
+        return;  // Sai do método se a senha não atender aos requisitos
+    }
 
     java.sql.Connection conec = ConexaoSQL.getCon();
-    String sql = "SELECT * FROM cadastro WHERE nome = ? AND senha = ?";
-    try ( java.sql.PreparedStatement preparedStatement = conec.prepareStatement(sql)) {
+    String sql = "SELECT * FROM cadastro WHERE email = ? AND senha = ?";
+    try (java.sql.PreparedStatement preparedStatement = conec.prepareStatement(sql)) {
         preparedStatement.setString(1, nomeUsuario);
         preparedStatement.setString(2, senha);
-        
+
         try (java.sql.ResultSet resultSet = preparedStatement.executeQuery()) {
             if (resultSet.next()) {
                 // Usuário autenticado
@@ -157,9 +171,19 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
             }
         }
-    }     catch (java.sql.SQLException ex) {
+    } catch (java.sql.SQLException ex) {
         Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
     }
+}
+
+// Função para verificar se a senha contém pelo menos uma letra maiúscula
+private boolean contemLetraMaiuscula(String senha) {
+    for (int i = 0; i < senha.length(); i++) {
+        if (Character.isUpperCase(senha.charAt(i))) {
+            return true;  // Encontrou uma letra maiúscula
+        }
+    }
+    return false;  // Não encontrou nenhuma letra maiúscula
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

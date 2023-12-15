@@ -126,7 +126,7 @@ public class Pesquisa extends javax.swing.JFrame {
             new Cursed().setVisible(true);
             this.dispose();
         }else{
-             JOptionPane.showMessageDialog(null, "conteúdo não Encontrado!");
+             JOptionPane.showMessageDialog(null, "Conteúdo não Encontrado!");
         }
             
     }//GEN-LAST:event_jButton1ActionPerformed
